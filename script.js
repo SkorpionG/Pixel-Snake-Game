@@ -30,10 +30,15 @@ const settingConfig = {
 function convertToDataTypeOf(dataOfTargetType, input) {
   let targetType = typeof dataOfTargetType;
   let convertedInput;
+  if (!input) {
+    return dataOfTargetType;
+  }
   if (targetType === "number") {
     convertedInput = Number(input);
-  } else {
+  } else if (targetType === "string") {
     convertedInput = input.toString();
+  } else {
+    return dataOfTargetType;
   }
   return convertedInput;
 }
@@ -49,7 +54,8 @@ function loadSettings() {
       inputType,
     } = settingConfig[setting];
     let settingValue = localStorage.getItem(settingName);
-    settingValue = convertToDataTypeOf(defaultValue, settingValue);
+    settingValue =
+      settingValue && convertToDataTypeOf(defaultValue, settingValue);
     if (!options.includes(settingValue)) {
       localStorage.setItem(settingName, defaultValue);
       settingValue = defaultValue;
