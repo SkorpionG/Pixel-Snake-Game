@@ -1,3 +1,7 @@
 {
-  "recommendations": ["ms-vscode.live-server", "ritwickdey.liveserver"]
+  "recommendations": [
+    "ms-vscode.live-server",
+    "ritwickdey.liveserver",
+    "esbenp.prettier-vscode"
+  ]
 }

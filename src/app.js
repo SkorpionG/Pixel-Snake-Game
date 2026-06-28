@@ -1,3 +1,4 @@
+/* global loadedSettings */
 const startButton = document.getElementById("start");
 const togglePauseButton = document.getElementById("toggle-pause");
 const canvas = document.getElementById("game-area");
@@ -115,15 +116,16 @@ function initSnakeBody() {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 function resetGame() {
   snake = [];
   direction = "Right";
-  snakeColor = {
+  gameSettings.snakeColor = {
     head: "lightgreen",
     body: "lightblue",
     stroke: "white",
   };
-  initSnakeBody;
+  initSnakeBody();
 }
 
 function startGame() {

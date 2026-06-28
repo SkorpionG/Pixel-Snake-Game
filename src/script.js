@@ -100,7 +100,6 @@ function saveSettings() {
     if (!options.includes(settingValue)) {
       console.log(options, settingValue);
       localStorage.setItem(settingName, defaultValue);
-      settingValue = defaultValue;
     } else {
       console.log("儲存設定值: " + settingValue);
       localStorage.setItem(settingName, settingValue);
@@ -175,4 +174,5 @@ resetHighestScoreButton.addEventListener("click", () => {
   location.reload();
 });
 
+// eslint-disable-next-line no-unused-vars
 let loadedSettings = loadSettings();
