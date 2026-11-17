@@ -1,4 +1,5 @@
 const js = require("@eslint/js");
+const globals = require("globals");
 const prettierConfig = require("eslint-config-prettier");
 const prettierPlugin = require("eslint-plugin-prettier");
 
@@ -13,21 +14,24 @@ module.exports = [
       "no-unused-vars": "warn",
       "no-undef": "error",
     },
+  },
+  {
+    files: ["src/**/*.js"],
     languageOptions: {
       globals: {
-        document: "readonly",
-        window: "readonly",
-        console: "readonly",
-        localStorage: "readonly",
-        Math: "readonly",
-        alert: "readonly",
-        setInterval: "readonly",
-        clearInterval: "readonly",
-        Number: "readonly",
-        location: "readonly",
+        ...globals.browser,
       },
       ecmaVersion: 2022,
       sourceType: "script",
+    },
+  },
+  {
+    files: ["*.js"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+      sourceType: "commonjs",
     },
   },
   prettierConfig,

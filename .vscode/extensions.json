@@ -2,6 +2,7 @@
   "recommendations": [
     "ms-vscode.live-server",
     "ritwickdey.liveserver",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
   ]
 }
