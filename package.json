@@ -1,13 +1,14 @@
 {
   "name": "pixel-snake-game",
   "version": "1.0.0",
-  "description": "A simple, pixel-style snake game built using HTML, CSS, and JS.",
+  "description": "A simple pixel-style snake game built using HTML, CSS, and Vanilla JavaScript.",
   "private": true,
+  "type": "module",
   "scripts": {
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:fix": "eslint \"src/**/*.js\" --fix",
     "prepare": "husky",
     "husky:init": "chmod +x .husky/pre-commit"
   },
@@ -15,9 +16,14 @@
     "type": "git",
     "url": "git+https://github.com/SkorpionG/Pixel-Snake-Game.git"
   },
-  "keywords": [],
+  "keywords": [
+    "snake-game",
+    "pixel-snake",
+    "canvas",
+    "html5-game",
+    "vanilla-javascript"
+  ],
   "author": "SkorpionG",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/SkorpionG/Pixel-Snake-Game/issues"
   },

@@ -54,8 +54,7 @@ function loadSettings() {
       inputType,
     } = settingConfig[setting];
     let settingValue = localStorage.getItem(settingName);
-    settingValue =
-      settingValue && convertToDataTypeOf(defaultValue, settingValue);
+    settingValue = settingValue && convertToDataTypeOf(defaultValue, settingValue);
     if (!options.includes(settingValue)) {
       localStorage.setItem(settingName, defaultValue);
       settingValue = defaultValue;
@@ -68,8 +67,7 @@ function loadSettings() {
         let selectOption = document.createElement("option");
         selectOption.value = option;
         selectOption.selected = option === settingValue;
-        selectOption.textContent =
-          settingConfig[setting]["optionNames"][option];
+        selectOption.textContent = settingConfig[setting]["optionNames"][option];
         select.appendChild(selectOption);
       }
     } else if (inputType === "checkbox") {
@@ -109,12 +107,7 @@ function saveSettings() {
 
 function resetSettings() {
   for (let setting in settingConfig) {
-    const {
-      settingName,
-      default: defaultValue,
-      inputId,
-      inputType,
-    } = settingConfig[setting];
+    const { settingName, default: defaultValue, inputId, inputType } = settingConfig[setting];
     localStorage.setItem(settingName, defaultValue);
     if (inputType === "checkbox") {
       document.getElementById(inputId).checked = defaultValue == "true";
@@ -174,5 +167,4 @@ resetHighestScoreButton.addEventListener("click", () => {
   location.reload();
 });
 
-// eslint-disable-next-line no-unused-vars
-let loadedSettings = loadSettings();
+export const loadedSettings = loadSettings();

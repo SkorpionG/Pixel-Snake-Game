@@ -1,4 +1,5 @@
-/* global loadedSettings */
+import { loadedSettings } from "./script.js";
+
 const startButton = document.getElementById("start");
 const togglePauseButton = document.getElementById("toggle-pause");
 const canvas = document.getElementById("game-area");
@@ -28,13 +29,11 @@ let pause = true;
 
 class Score {
   static updateCurrentScoreLabel(newScore) {
-    document.getElementById("current-score").innerHTML =
-      "遊戲分數: " + newScore;
+    document.getElementById("current-score").innerHTML = "遊戲分數: " + newScore;
   }
 
   static updateHighestScoreLabel(newScore) {
-    document.getElementById("highest-score").innerHTML =
-      "最高分數: " + newScore;
+    document.getElementById("highest-score").innerHTML = "最高分數: " + newScore;
   }
 
   constructor() {
@@ -205,10 +204,7 @@ function draw() {
 
   if (
     !gameSettings.allowHitWalls &&
-    (snake[0].x >= canvas.width ||
-      snake[0].x < 0 ||
-      snake[0].y >= canvas.height ||
-      snake[0].y < 0)
+    (snake[0].x >= canvas.width || snake[0].x < 0 || snake[0].y >= canvas.height || snake[0].y < 0)
   ) {
     console.log("Hit wall!");
     clearInterval(game);
